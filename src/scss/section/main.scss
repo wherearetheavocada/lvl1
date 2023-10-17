@@ -8,14 +8,16 @@ body{
   max-width: 100%;
   overflow-x: hidden;
 }
-
 .main {
-  .section-banner {
-    background-image: linear-gradient(#252b49cc, #252b49cc),
-      url(/src/img/img.png);
-      background-repeat: no-repeat;
+  background-image: linear-gradient(#252b49cc, #252b49cc),
+  url(/src/img/img.png);
+        background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+}
+  .section-banner {
+
+
     .banner-content {
       padding-top: 129px;
       padding-bottom: 120px;
@@ -181,7 +183,7 @@ body{
 
   .section-work {
     .conteiner-work {
-      width: 1510px;
+      // width: 1510px;
       padding: 0 15px;
       margin: 0 auto;
     }
@@ -192,22 +194,24 @@ body{
       padding-bottom: 114px;
       gap: 2px;
 
-      &__img {
-        width: 378px;
-        height: 340px;
+       &__img{
+        width: 100%;
         position: relative;
         @media (max-width: 1200px) {
-          width: 254px;
-          height: 228px;
+
         }
 
         &:hover .work-content__text {
           display: block;
         }
       }
+      &__img img{
+        width: 100%;
+        height: 100%;
+      }
       &__text {
-        width: 379px;
-        height: 340px;
+        width: 100%;
+        height: 100%;
         color: white;
         font-size: 20px;
         position: absolute;
@@ -231,6 +235,13 @@ body{
         word-wrap: break-word;
         margin-bottom: 22.5px;
         margin-top: 84.6px;
+        @media(max-width:1200px){
+          font-size: 18px;
+        }
+        @media(max-width:800px){
+          margin-top: 46px;
+          margin-bottom: 7px;
+        }
       }
       &__text2 {
         color: white;
@@ -238,6 +249,13 @@ body{
         font-family: Raleway;
         font-weight: 400;
         word-wrap: break-word;
+        @media(max-width:1200px){
+          font-size: 14px;
+        }
+      }
+      @media(max-width:800px){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
       }
     }
   }
@@ -249,6 +267,15 @@ body{
       justify-content: center;
       gap: 30px;
       padding-bottom: 114px;
+      @media(max-width:800px){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+      @media(max-width:450px){
+        display: flex;
+        flex-direction: column;
+      }
     }
     .ourTeam-content__el {
       display: flex;
@@ -343,29 +370,52 @@ body{
     .conteiner-testimonials {
       margin: 0 auto;
     }
+    .slick-initialized .slick-slide{
+      display: flex;
+    }
     .testimonial-slider__items {
       display: flex;
-      // justify-content: space-between;
+      justify-content: space-between;
       @media (max-width: 800px) {
         flex-direction: column;
       }
     }
-    .testimonial-slider__items--img img {
-      width: 741px;
+    .testimonial-slider__items--img{
       height: 490px;
-      @media (max-width: 1200px) {
-        width: 502px;
+      width: 50%  ;
+      @media(max-width:1200px){
         height: 332px;
+      }
+      @media(max-width:800px){
+        width: 100%;
+      }
+    }
+    .testimonial-slider__items--img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @media (max-width: 1200px) {
+        // width: 502px;
+        // height: 332px;
       }
       @media (max-width: 800px) {
         width: 100%;
       }
     }
+    .slick-next, .slick-arrow, .slick-prev{
+      display: none;
+    }
+    .slick-dots li.slick-active button:before{
+      color:#5c3249;
+    }
+    .slick-dots li button:before {
+      font-size: 16px;
+    }
     .testimonial-slider__items--text {
       background: #5c3249;
-      width: 100%;
+      width: 50%;
       padding: 135px 170px 116px 129px;
-      @media (max-width: 1510px) {
+      @media (max-width: 1345px) {
         padding: 65px 104px 110px 88px;
       }
       //   @media(max-width:1200px){
@@ -377,6 +427,7 @@ body{
       @media (max-width: 800px) {
         padding: 0 15px;
         padding-top: 30px;
+        width: 100%;
       }
     }
     .testimonial-slider__items--text__title {
@@ -492,4 +543,4 @@ body{
       }
     }
   }
-}
+
